@@ -1,9 +1,10 @@
 import "./MainPage.scss";
 import { useEffect, useState } from "react";
-import Favourites, { updateScroll } from "./navigation/Favourites";
+import Favourites from "./navigation/Favourites";
 import { IFavList, IMemeType, SCROLL_TYPE, TabsState } from "../memeTypes";
 import MemeContainer from "./page-content/MemeContainer";
 import TopBar from "./navigation/TopBar";
+import { Analytics } from "@vercel/analytics/react";
 
 const MainPage = () => {
   const [selectedTab, setSelectedTab] = useState(TabsState.MAIN);
@@ -79,6 +80,7 @@ const MainPage = () => {
           selectedMeme={checkMeme}
         />
       </div>
+      <Analytics />
     </div>
   );
 };
